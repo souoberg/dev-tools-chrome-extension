@@ -2,7 +2,7 @@
 
 Uma extensão para o Chrome que oferece ferramentas avançadas para manipulação e visualização de JSON, com interface intuitiva e recursos poderosos.
 
-![Dev Tools JSON Screenshot](screenshot.png)
+![Dev Tools JSON Screenshot](assets/images/screenshot.png)
 
 ## Funcionalidades
 
