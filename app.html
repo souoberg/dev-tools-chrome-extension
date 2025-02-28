@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Tools JSON</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Barra de navegação superior -->
+    <header class="app-header">
+      <div class="logo">Dev Tools JSON</div>
+      <nav class="main-nav">
+        <button class="nav-button active" data-section="format-json">Formatar JSON</button>
+        <button class="nav-button" data-section="string-to-json">String para JSON</button>
+        <button class="nav-button" data-section="compact-json">Compactar JSON</button>
+        <button class="nav-button" data-section="sort-json">Ordenar JSON</button>
+      </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="app-content">
+      <!-- Painel de entrada -->
+      <section class="input-panel">
+        <div class="panel-header">
+          <h3>Entrada</h3>
+          <button id="clear-input" class="icon-button" title="Limpar entrada">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <textarea id="inputJson" placeholder="Cole seu JSON aqui..."></textarea>
+        <div class="panel-footer">
+          <button id="process-button" class="primary-button">Processar</button>
+        </div>
+      </section>
+
+      <!-- Painel de saída com histórico -->
+      <section class="output-panel">
+        <div class="panel-header">
+          <h3>Resultados</h3>
+          <button id="clear-history" class="icon-button" title="Limpar histórico">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <div id="results-container" class="results-container">
+          <!-- Os resultados serão inseridos aqui dinamicamente -->
+          <div class="empty-state">
+            <i class="fas fa-code"></i>
+            <p>Os resultados processados aparecerão aqui</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Template para itens de resultado -->
+  <template id="result-item-template">
+    <div class="result-item">
+      <div class="result-header">
+        <span class="timestamp"></span>
+        <div class="result-actions">
+          <button class="reuse-button icon-button" title="Usar como entrada">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <button class="copy-button icon-button" title="Copiar para área de transferência">
+            <i class="fas fa-copy"></i>
+          </button>
+          <button class="remove-button icon-button" title="Remover resultado">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+      <pre class="result-content"></pre>
+      <button class="toggle-expand">
+        <i class="fas fa-chevron-down"></i>
+        <span>Mostrar mais</span>
+      </button>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html> 
